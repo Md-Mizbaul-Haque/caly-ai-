@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Caly AI Website
 
-## Getting Started
+Marketing landing page for Caly AI, the Android calorie tracker. Built with Next.js (App Router), React, and Tailwind CSS v4.
 
-First, run the development server:
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # production build
+npm run lint    # eslint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/app/` - the route, layout, and brand tokens (`globals.css`).
+- `src/components/` - one file per page section (`SiteNav`, `Hero`, `HowItWorks`, `Features`, `ScreenshotGallery`, `DownloadCta`, `SiteFooter`) plus the `PhoneFrame` device mock.
+- `src/lib/content.ts` - all page copy and lists in one place: nav links, steps, features, screenshots, the site URL, the APK URL, and the app version.
+- `src/app/` - also holds `robots.ts`, `sitemap.ts`, `opengraph-image.tsx`, and the `icon.png` / `apple-icon.png` brand icons.
+- `public/brand/` - the app logo.
+- `public/screenshots/` - app screenshots for the gallery.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Add the download file
 
-## Learn More
+The download buttons point at `APK_URL` in `src/lib/content.ts`. Locally that is `/caly-ai.apk`.
 
-To learn more about Next.js, take a look at the following resources:
+Drop your built APK into `public/` as `caly-ai.apk`, or point `APK_URL` at a hosted link. Update `APP_VERSION` to match.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For production, host the APK outside the repo (the file is ~125 MB and gitignored) and set `NEXT_PUBLIC_APK_URL`. A GitHub Release asset works well.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Add screenshots
 
-## Deploy on Vercel
+Put images in `public/screenshots/` and set each `src` in `SCREENSHOTS` (`src/lib/content.ts`), for example `/screenshots/dashboard.png`. Until then each phone frame shows a labeled placeholder.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copy `.env.example` to `.env.local`:
+
+- `NEXT_PUBLIC_SITE_URL` - public origin, used for metadata, OG tags, robots, and the sitemap. Defaults to `http://localhost:3000`.
+- `NEXT_PUBLIC_APK_URL` - hosted APK download URL. Defaults to the local `/caly-ai.apk`.
+
+## Deploy
+
+Deploys to Vercel as-is. Set `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_APK_URL` in the project settings so the download link and metadata resolve correctly.
