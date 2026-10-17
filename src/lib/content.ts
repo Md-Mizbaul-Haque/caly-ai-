@@ -1,7 +1,12 @@
 export const APP_NAME = "Caly AI";
 
-// Public site origin. Set NEXT_PUBLIC_SITE_URL in production.
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+// Public site origin. NEXT_PUBLIC_SITE_URL wins; Vercel's own domain is the
+// fallback so metadata, robots, and the sitemap never point at localhost.
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
 
 // Local APK lives in `public/caly-ai.apk`. In production set NEXT_PUBLIC_APK_URL
 // to a hosted build (the 125 MB file is gitignored and too big for most hosts).
