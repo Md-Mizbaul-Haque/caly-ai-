@@ -10,34 +10,37 @@ const ICONS = {
 };
 
 const TONES = {
-  primary: "bg-primary text-ink",
-  tint: "bg-line/60 text-ink",
+  primary: "bg-primary text-white",
+  tint: "border border-line bg-line/40 text-ink",
   plain: "border border-line bg-surface text-ink",
 };
 
 export default function Features() {
   return (
-    <section id="features" className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+    <section id="features" className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 md:py-24">
       <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
         Everything you need to stay on track
       </h2>
 
-      <div className="mt-12 grid gap-4 lg:grid-cols-3">
+      <div className="mt-10 grid gap-4 lg:grid-cols-3">
         {FEATURES.map((feature) => {
           const Icon = ICONS[feature.icon];
+          const isPrimary = feature.tone === "primary";
           return (
             <div
               key={feature.title}
-              className={`flex h-full flex-col justify-between gap-10 rounded-3xl p-7 ${TONES[feature.tone]} ${feature.span}`}
+              className={`flex h-full flex-col gap-6 rounded-3xl p-6 ${TONES[feature.tone]} ${feature.span}`}
             >
               <Icon
                 size={22}
                 weight="regular"
-                className={feature.tone === "primary" ? "text-ink/60" : "text-muted"}
+                className={isPrimary ? "text-white/70" : "text-muted"}
               />
               <div>
                 <h3 className="text-xl font-bold">{feature.title}</h3>
-                <p className="mt-2 text-base leading-relaxed opacity-80">{feature.body}</p>
+                <p className={`mt-2 text-base leading-relaxed ${isPrimary ? "text-white" : "text-muted"}`}>
+                  {feature.body}
+                </p>
               </div>
             </div>
           );

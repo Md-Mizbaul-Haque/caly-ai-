@@ -11,7 +11,7 @@ export default function PhoneFrame({
   priority?: boolean;
 }) {
   return (
-    <div className="relative w-[240px] shrink-0 rounded-[2.5rem] border border-line bg-surface p-3 shadow-[0_30px_70px_-30px_rgba(26,26,26,0.35)] sm:w-[272px]">
+    <div className="relative w-[240px] shrink-0 rounded-[2.5rem] border border-line bg-surface p-3 shadow-[0_24px_50px_-30px_rgba(26,26,26,0.3)] sm:w-[272px]">
       <div
         className="relative overflow-hidden rounded-[2rem] bg-[#fffdfb]"
         style={{ aspectRatio: "941 / 1672" }}

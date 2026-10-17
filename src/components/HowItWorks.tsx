@@ -2,7 +2,7 @@ import { STEPS } from "@/lib/content";
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 md:py-24">
+    <section id="how-it-works" className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 md:py-20">
       <h2 className="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
         Three taps to log a meal
       </h2>

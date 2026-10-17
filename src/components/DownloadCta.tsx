@@ -4,7 +4,7 @@ import { APK_URL, APP_NAME, APP_VERSION } from "@/lib/content";
 
 export default function DownloadCta() {
   return (
-    <section className="bg-primary text-ink">
+    <section className="bg-primary text-white">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-4 py-20 text-center sm:px-6 md:py-24">
         <Image
           src="/brand/caly-logo.png"
