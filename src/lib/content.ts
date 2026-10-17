@@ -23,17 +23,14 @@ export const STEPS = [
   {
     title: "Snap",
     body: "Point your camera at a plate, a barcode, or a food label.",
-    icon: "camera",
   },
   {
     title: "Scan",
     body: "Caly reads the photo and estimates calories, protein, carbs, and fat.",
-    icon: "scan",
   },
   {
     title: "Track",
     body: "Watch your day fill up against the goal you set, meal by meal.",
-    icon: "target",
   },
 ] as const;
 

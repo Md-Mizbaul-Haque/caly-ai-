@@ -31,9 +31,9 @@ export default function Features() {
               className={`flex h-full flex-col justify-between gap-10 rounded-3xl p-7 ${TONES[feature.tone]} ${feature.span}`}
             >
               <Icon
-                size={26}
-                weight="bold"
-                className={feature.tone === "primary" ? "text-ink" : "text-primary"}
+                size={22}
+                weight="regular"
+                className={feature.tone === "primary" ? "text-ink/60" : "text-muted"}
               />
               <div>
                 <h3 className="text-xl font-bold">{feature.title}</h3>

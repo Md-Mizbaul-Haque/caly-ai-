@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   --cream: #fff8f2;
   --surface: #ffffff;
   --ink: #1a1a1a;
@@ -9,16 +10,6 @@
   --primary: #f2470c;
   --primary-dark: #e85a24;
   --success: #22c55e;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --cream: #14110f;
-    --surface: #1c1815;
-    --ink: #f5efe9;
-    --muted: #a89e95;
-    --line: #2a2420;
-  }
 }
 
 @theme inline {
