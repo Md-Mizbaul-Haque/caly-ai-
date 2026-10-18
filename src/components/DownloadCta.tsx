@@ -22,7 +22,7 @@ export default function DownloadCta() {
         <a
           href={APK_URL}
           download
-          className="inline-flex h-12 w-full max-w-xs items-center justify-center gap-2 rounded-full bg-surface px-7 text-base font-semibold text-ink transition-colors hover:bg-cream active:scale-[0.98] sm:w-auto"
+          className="inline-flex h-12 w-full max-w-xs items-center justify-center gap-2 rounded-full bg-surface px-7 text-base font-semibold text-primary transition-colors hover:bg-cream active:scale-[0.98] sm:w-auto"
         >
           <DownloadSimple size={22} weight="bold" />
           Download for Android
