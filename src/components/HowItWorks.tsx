@@ -7,14 +7,14 @@ export default function HowItWorks() {
         Three taps to log a meal
       </h2>
 
-      <div className="mt-12 grid gap-10 md:grid-cols-3">
+      <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-10">
         {STEPS.map((step, i) => (
           <div key={step.title} className="border-t border-line pt-6">
             <span className="font-mono text-xs tracking-[0.2em] text-muted">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <h3 className="mt-3 text-xl font-bold">{step.title}</h3>
-            <p className="mt-2 text-base leading-relaxed text-muted">{step.body}</p>
+            <h3 className="mt-3 text-base font-bold sm:text-xl">{step.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">{step.body}</p>
           </div>
         ))}
       </div>

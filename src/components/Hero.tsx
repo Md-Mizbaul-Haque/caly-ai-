@@ -18,20 +18,22 @@ export default function Hero() {
         <p className="mt-6 text-lg leading-relaxed text-muted">
           Snap a photo of your meal and Caly AI logs the calories and macros for you.
         </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-row gap-3">
           <a
             href={APK_URL}
             download
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-base font-semibold text-white transition-colors hover:bg-primary-dark active:scale-[0.98]"
+            className="inline-flex h-12 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-primary-dark active:scale-[0.98] sm:px-6 sm:text-base"
           >
             <DownloadSimple size={20} weight="bold" />
-            Download for Android
+            <span className="sm:hidden">Download</span>
+            <span className="hidden sm:inline">Download for Android</span>
           </a>
           <a
             href="#how-it-works"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-line px-6 text-base font-semibold transition-colors hover:border-ink/30 active:scale-[0.98]"
+            className="inline-flex h-12 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-line px-4 text-sm font-semibold transition-colors hover:border-ink/30 active:scale-[0.98] sm:px-6 sm:text-base"
           >
-            See how it works
+            <span className="sm:hidden">How it works</span>
+            <span className="hidden sm:inline">See how it works</span>
             <ArrowRight size={18} weight="bold" />
           </a>
         </div>
