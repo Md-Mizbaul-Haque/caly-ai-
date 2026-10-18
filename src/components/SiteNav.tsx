@@ -31,9 +31,10 @@ export default function SiteNav() {
         <a
           href={APK_URL}
           download
-          className="inline-flex h-10 shrink-0 items-center rounded-full bg-primary px-5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark active:scale-[0.98]"
+          className="inline-flex h-10 shrink-0 items-center rounded-full bg-primary px-4 text-sm font-semibold text-white transition-colors hover:bg-primary-dark active:scale-[0.98] sm:px-5"
         >
-          Download for Android
+          <span className="sm:hidden">Download</span>
+          <span className="hidden sm:inline">Download for Android</span>
         </a>
       </div>
     </header>
