@@ -2,6 +2,8 @@
 
 Marketing landing page for Caly AI, the Android calorie tracker. Built with Next.js (App Router), React, and Tailwind CSS v4.
 
+Live: https://calyai.vercel.app
+
 ## Getting started
 
 ```bash
@@ -26,7 +28,13 @@ The download buttons point at `APK_URL` in `src/lib/content.ts`. Locally that is
 
 Drop your built APK into `public/` as `caly-ai.apk`, or point `APK_URL` at a hosted link. Update `APP_VERSION` to match.
 
-For production, host the APK outside the repo (the file is ~125 MB and gitignored) and set `NEXT_PUBLIC_APK_URL`. A GitHub Release asset works well.
+For production, host the APK outside the repo (the file is ~125 MB and gitignored) and set `NEXT_PUBLIC_APK_URL`. A GitHub Release asset works well. The live site currently points at the `latest` release asset:
+
+```
+https://github.com/Md-Mizbaul-Haque/caly-ai-/releases/latest/download/caly-ai.apk
+```
+
+To ship a new build there, replace that asset on the latest release (delete the old `caly-ai.apk`, then upload the new one); the download URL stays the same, so no redeploy is needed.
 
 ## Add screenshots
 
